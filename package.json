@@ -1,0 +1,19 @@
+{
+  "name": "demo",
+  "version": "1.0.0",
+  "description": "This is demo setup",
+  "main": "file.js",
+  "scripts": {
+    "start": "nodemon file.js",
+    "dev": "node file.js",
+    "build":""
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^5.2.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.11"
+  }
+}
