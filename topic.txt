@@ -1,2 +1,6 @@
 9-02-26
 Callstack
+Event Loop
+promis,resolve
+stack overflow
+call back 
