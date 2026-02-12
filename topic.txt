@@ -4,3 +4,12 @@ Event Loop
 promis,resolve
 stack overflow
 call back 
+
+
+12-2-26
+promise
+resolve
+reject
+catch
+async
+await
