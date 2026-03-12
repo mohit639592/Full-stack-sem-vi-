@@ -13,3 +13,6 @@ reject
 catch
 async
 await
+
+16-02-2026
+fetch from api
