@@ -1,8 +1,8 @@
-const users = require("../modules/usermodules")
+// const users = require("../modules/usermodules")
 
-exports.getuser = (req,res)=>{
-    res.json(users)   
-}
+// exports.getuser = (req,res)=>{
+//     res.json(users)   
+// }
 
     // app.get("/",(req,res)=>{
     //     res.json({
@@ -32,3 +32,40 @@ exports.getuser = (req,res)=>{
     //         clientid:clientid,
     //     });
     // })
+
+
+
+    //16-03-2026
+
+    const user = require("../modules/usermodules");
+
+    expoerts.getuser = (req,res)=>{
+        res.json(user);
+    };
+
+    exports.getUserById = (req,res)=>{
+        const userId = req.params.id;
+        const userQueryId = req.query.id;
+        console.log("userQuery",userQueryId);
+        const headers = req.headers;
+        console.log("headers",headers);
+        let user={};
+        user.map((userMeta)=>{
+            const id = userMeta.id;
+            if(id == userId){
+
+            }
+        })
+        
+
+
+    }
+
+    exports.adduser = (req,res)=>{
+        const students = req.body;
+        console.log("students",students);
+        res.json({
+            messege:"Student added",
+            students,
+        })
+    }
