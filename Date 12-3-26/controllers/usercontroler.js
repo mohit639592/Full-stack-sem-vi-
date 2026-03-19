@@ -39,27 +39,27 @@
 
     const user = require("../modules/usermodules");
 
-    expoerts.getuser = (req,res)=>{
+    exports.getuser = (req,res)=>{
         res.json(user);
     };
 
-    exports.getUserById = (req,res)=>{
-        const userId = req.params.id;
-        const userQueryId = req.query.id;
-        console.log("userQuery",userQueryId);
-        const headers = req.headers;
-        console.log("headers",headers);
-        let user={};
-        user.map((userMeta)=>{
-            const id = userMeta.id;
-            if(id == userId){
+    // exports.getUserById = (req,res)=>{
+    //     const userId = req.params.id;
+    //     const userQueryId = req.query.id;
+    //     console.log("userQuery",userQueryId);
+    //     const headers = req.headers;
+    //     console.log("headers",headers);
+    //     let user={};
+    //     user.map((userMeta)=>{
+    //         const id = userMeta.id;
+    //         if(id == userId){
 
-            }
-        })
+    //         }
+    //     })
         
 
 
-    }
+    // }
 
     exports.adduser = (req,res)=>{
         const students = req.body;
@@ -68,4 +68,15 @@
             messege:"Student added",
             students,
         })
+    }
+
+    //18-03-2026
+    exports.getUserById = (req,res)=>{
+        const{name} = req.query;
+        const{department,section} = req.params;
+        console.log("name",name);
+        console.log("Dep:",department)
+        console.log("Sec:",section);
+        
+        
     }
