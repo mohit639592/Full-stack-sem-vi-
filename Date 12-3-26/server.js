@@ -1,5 +1,6 @@
 const express = require("express");
 const userroutes=require("./routes/userroutes")
+const productRoute=require("./routes/productRoute")
 const app =express();
 
 // app.get("/",(req,res)=>{
@@ -29,6 +30,8 @@ const app =express();
 // })
 
 app.use("/",userroutes)
+
+app.use("/admin",productRoute)
 app.listen(3000,()=>{
     console.log("SERVER RUNNIN ON 3000");
 })

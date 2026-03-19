@@ -6,7 +6,7 @@
   "scripts": {
     "start": "nodemon file.js",
     "dev": "node file.js",
-    "build":""
+    "build": ""
   },
   "author": "",
   "license": "ISC",
@@ -14,6 +14,6 @@
     "express": "^5.2.1"
   },
   "devDependencies": {
-    "nodemon": "^3.1.11"
+    "nodemon": "^3.1.14"
   }
 }
