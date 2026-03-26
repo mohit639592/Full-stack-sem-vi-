@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>HELLO</h1>
+    <h2><%=name %></h2>
+    <ol>
+        <% students.forEach(student=>{%>
+            <li>
+                <%= student.name %><p><%=student.dep%></p>          
+            </li>
+        <%})%>
+    </ol>
+
+    <!-- MERGER 2 DIFFERENT FILE -->
+
+    <%- include("header")%>
+    <main>
+        HERE MAIN CONTENT WILL BE THERE
+    </main>
+    <%- include("footer")%>
+</body>
+</html>

@@ -2,8 +2,8 @@ const express = require("express");
 const userroutes=require("./routes/userroutes")
 const productRoute=require("./routes/productRoute")
 const authRoutes = require("./routes/authRoutes")
-const app =express();
 
+const  app = require("./app")
 // app.get("/",(req,res)=>{
 //     res.json({
 //         messege:"Serveer done",
@@ -30,13 +30,13 @@ const app =express();
 //     })
 // })
 
-app.use("/",userroutes)
+//app.use("/",userroutes)
 
-app.use("/admin",productRoute)
+//app.use("/admin",productRoute)
 app.listen(3000,()=>{
     console.log("SERVER RUNNIN ON 3000");
 })
-app.use("/login",authRoutes)
+//app.use("/login",authRoutes)
 // app.get("/home/:uid",(req,res)=>{
 //     const clientid=req.params.uid;
 //     res.json({
