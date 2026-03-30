@@ -57,6 +57,18 @@ const authController = require("./routes/authRoutes")
 // app.use("/",userRoutes);
 // app.use("/login",authController);
 app.set("view engine","ejs")
+const homepagecontent={
+    header:{title:"GLA -------------- University"},
+    content:{course:"Node js"},
+    footer:{createdBy:"GLA @2026"},
+};
+app.get("/",(req,res)=>{
+    res.render("home",{
+        productName:"GLA",
+        ...homepagecontent
+    });
+})
+
 app.get("/home",(req,res)=>{
     res.render("home",{name:"Mohit ⚙️",
         students:[
@@ -66,10 +78,10 @@ app.get("/home",(req,res)=>{
         ]
     });
 })
-app.get("/footer",(req,res)=>{
-    res.render("footer")
+app.get("home/footer",(req,res)=>{
+    res.render("footer",homepagecontent.footer)
 })
-app.get("/header",(req,res)=>{
-    res.render("header")
+app.get("home/header",(req,res)=>{
+    res.render("header",homepagecontent.header)
 })
 module.exports = app;

@@ -7,21 +7,14 @@
 </head>
 <body>
     <h1>HELLO</h1>
-    <h2><%=name %></h2>
-    <ol>
-        <% students.forEach(student=>{%>
-            <li>
-                <%= student.name %><p><%=student.dep%></p>          
-            </li>
-        <%})%>
-    </ol>
+    
 
     <!-- MERGER 2 DIFFERENT FILE -->
 
-    <%- include("header")%>
+    <%- include("home/header",header)%>
     <main>
         HERE MAIN CONTENT WILL BE THERE
     </main>
-    <%- include("footer")%>
+    <%- include("home/footer",footer)%>
 </body>
 </html>
