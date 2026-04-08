@@ -3,7 +3,7 @@ const router = express.Router();
 
 const usercontroler = require("../controllers/usercontroler")
 
-router.get("/get/users",usercontroler.getuser)
+// router.get("/get/users",usercontroler.getuser)
 // router.get("/users/:id",usercontroler.getuserByid);
 
 //wrong way because get ( Action )are in route
@@ -16,9 +16,10 @@ router.get("/get/users",usercontroler.getuser)
 //18-03-26
 
 //Right way
-router.get("/users",usercontroler.getuser)
-router.get("/users/:department/:section",usercontroler.getUserById)
-router.post("/users",usercontroler.adduser)
+router.get("/users",usercontroler.getUsers)
+router.get("/users/get",usercontroler.getUserById)
+// router.get("/users/:department/:section",usercontroler.getUserById)
+// router.post("/users",usercontroler.adduser)
 module.exports = router;
 
 //http://localhost:3000/users/cse/M?name=sample

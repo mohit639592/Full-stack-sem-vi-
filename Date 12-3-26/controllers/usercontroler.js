@@ -37,11 +37,11 @@
 
     //16-03-2026
 
-    const user = require("../modules/usermodules");
+    // const user = require("../modules/usermodules");
 
-    exports.getuser = (req,res)=>{
-        res.json(user);
-    };
+    // exports.getuser = (req,res)=>{
+    //     res.json(user);
+    // };
 
     // exports.getUserById = (req,res)=>{
     //     const userId = req.params.id;
@@ -61,22 +61,39 @@
 
     // }
 
-    exports.adduser = (req,res)=>{
-        const students = req.body;
-        console.log("students",students);
-        res.json({
-            messege:"Student added",
-            students,
-        })
-    }
+    // exports.adduser = (req,res)=>{
+    //     const students = req.body;
+    //     console.log("students",students);
+    //     res.json({
+    //         messege:"Student added",
+    //         students,
+    //     })
+    // }
 
-    //18-03-2026
-    exports.getUserById = (req,res)=>{
-        const{name} = req.query;
-        const{department,section} = req.params;
-        console.log("name",name);
-        console.log("Dep:",department)
-        console.log("Sec:",section);
+    // //18-03-2026
+    // exports.getUserById = (req,res)=>{
+    //     const{name} = req.query;
+    //     const{department,section} = req.params;
+    //     console.log("name",name);
+    //     console.log("Dep:",department)
+    //     console.log("Sec:",section);
         
         
-    }
+    // }
+    //8-4-26
+
+    const UserModel = require("../modules/usersmodule")
+    exports.getUsers = async (req,res)=>{
+        const users = await UserModel.find({});
+        res.json(users);
+    };
+
+
+exports.getUserById = async(req,res)=>{
+    const {id} = req.params;
+    const user = await UserModel.findOne({_id:Number(id)});
+    res.json(user);
+};
+
+// insertOne({}) => create({})
+// insertMany({}) => insertMany([])

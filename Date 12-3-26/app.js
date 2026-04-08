@@ -1,6 +1,9 @@
 const express = require("express");
 
 const app = express();
+const db = require("./modules/db")
+
+db();
 
 // app.use(express.json());
 
@@ -54,7 +57,7 @@ const productRoutes = require("./routes/productRoute")
 const authController = require("./routes/authRoutes")
 
 // app.use("/admin",productRoutes)
-// app.use("/",userRoutes);
+app.use("/",userRoutes);
 // app.use("/login",authController);
 app.set("view engine","ejs")
 const homepagecontent={
@@ -62,26 +65,26 @@ const homepagecontent={
     content:{course:"Node js"},
     footer:{createdBy:"GLA @2026"},
 };
-app.get("/",(req,res)=>{
-    res.render("home",{
-        productName:"GLA",
-        ...homepagecontent
-    });
-})
+// app.get("/",(req,res)=>{
+//     res.render("home",{
+//         productName:"GLA",
+//         ...homepagecontent
+//     });
+// })
 
-app.get("/home",(req,res)=>{
-    res.render("home",{name:"Mohit ⚙️",
-        students:[
-            {name:"student 1",dep:"cse"},
-            {name:"student 2",dep:"ece"},
-            {name:"student 3",dep:"mce"}            
-        ]
-    });
-})
-app.get("home/footer",(req,res)=>{
-    res.render("footer",homepagecontent.footer)
-})
-app.get("home/header",(req,res)=>{
-    res.render("header",homepagecontent.header)
-})
+// app.get("/home",(req,res)=>{
+//     res.render("home",{name:"Mohit ⚙️",
+//         students:[
+//             {name:"student 1",dep:"cse"},
+//             {name:"student 2",dep:"ece"},
+//             {name:"student 3",dep:"mce"}            
+//         ]
+//     });
+// })
+// app.get("home/footer",(req,res)=>{
+//     res.render("footer",homepagecontent.footer)
+// })
+// app.get("home/header",(req,res)=>{
+//     res.render("header",homepagecontent.header)
+// })
 module.exports = app;
