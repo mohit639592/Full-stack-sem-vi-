@@ -5,7 +5,7 @@ const db = require("./modules/db")
 
 db();
 
-// app.use(express.json());
+app.use(express.json());
 
 // app.get('/home',(req,res)=>{
 //     res.send("Home Page");

@@ -2,8 +2,8 @@ const mongoose = require("mongoose");
 //always start with capital latter
 
 const userSchema = mongoose.Schema({
-    name:{type:String, required:false,default:"Sample Name"},
-    id:Number,
+    name:{type:String, required:true},
+    _id:Number,
     age:Number,
     course:String,
     skills:[String],

@@ -17,7 +17,8 @@ const usercontroler = require("../controllers/usercontroler")
 
 //Right way
 router.get("/users",usercontroler.getUsers)
-router.get("/users/get",usercontroler.getUserById)
+router.get("/users/get/:id/:isActive",usercontroler.getUserById)
+router.post("/users/add",usercontroler.addUser)
 // router.get("/users/:department/:section",usercontroler.getUserById)
 // router.post("/users",usercontroler.adduser)
 module.exports = router;

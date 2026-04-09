@@ -89,11 +89,45 @@
     };
 
 
+// exports.getUserById = async(req,res)=>{
+//     const {id} = req.params;
+//     const user = await UserModel.findOne({_id:Number(id)});
+//     res.json(user);
+// };
+
 exports.getUserById = async(req,res)=>{
     const {id} = req.params;
-    const user = await UserModel.findOne({_id:Number(id)});
+    const { isActive } = req.query;
+    console.log("Is active",isActive);
+
+    filter = {_id:Number(id)};
+    if(isActive){
+        filter["isActive"] = Boolean(isActive);
+    }
+    console.log("Filter",filter);
+    
+    const user = await UserModel.findOne(filter);
     res.json(user);
-};
+}
+
+exports.addUser = async(req,res)=>{
+    const userMeta = req.body;
+
+    if(userMeta?._id){
+        const existingUser = await UserModel.findOne({_id:Number(userMeta._id)})
+        if(existingUser){
+            return res.send("user exists")
+        }
+        if()
+    }
+    try{
+        UserModel.create(userMeta);
+    }catch(err){
+        return res.json(err);
+        
+    }
+     res.send("User Created");
+}
 
 // insertOne({}) => create({})
 // insertMany({}) => insertMany([])
